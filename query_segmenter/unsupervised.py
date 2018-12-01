@@ -112,15 +112,15 @@ class Segmenter(object):
         return sig_ngrams
 
     def _precompute_stats(self, sig_ngrams, queries):
-        """Precompute counts for each ngram.
+        """Precompute counts for each ngram M.
 
         The segmentation score is a function of three values:
             - the number of times M occurs in any order ( k )
             - the number of times M occurs in that order ( N )
             - the total probability that M occurs in any order ( E(X) )
 
-        A high score (-log delta) indicates that M is a Multi-Word Entity.
-        A low score (-log delta) indicates that M is not a Multi-Word Entity.
+        A high score indicates that M is a Multi-Word Entity.
+        A low score indicates that M is not a Multi-Word Entity.
 
         """
         for ngram in sig_ngrams:
@@ -128,9 +128,10 @@ class Segmenter(object):
             for query in queries:
                 sub_queries = query.split()
                 if all(word in sub_queries for word in ngram.split()):
-                    # if all word in ngram co-occurs in query
+                    # if all words in n-gram co-occurs in query
                     self.stats[ngram]['co_occur'] += 1
                     if self._match_ngram(ngram, query):
+                        # if the n-gram occurs in query
                         self.stats[ngram]['frequency'] += 1
 
                     query_len = len(query.split())
