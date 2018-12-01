@@ -1,8 +1,9 @@
 # query-segmenter
 Query Segmentation for search
 
-`query_segmenter.unsupervised.Segmenter`:
-  - an implementation of [Unsupervised Query Segmentation Using only Query Logs](https://www.microsoft.com/en-us/research/wp-content/uploads/2011/01/pp0295-mishra.pdf) [Mishra et. al. 2011] from Microsoft Research.
+- `query_segmenter`
+  - `unsupervised.Segmenter`:
+    - an implementation of [Unsupervised Query Segmentation Using only Query Logs](https://www.microsoft.com/en-us/research/wp-content/uploads/2011/01/pp0295-mishra.pdf) [Mishra et. al. 2011] from Microsoft Research.
 
 Install:
 
