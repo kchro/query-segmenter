@@ -12,3 +12,4 @@ dependencies:
   - jupyterlab=0.35.3
   - pip:
     - tqdm==4.28.1
+    - pytest==4.0.1
