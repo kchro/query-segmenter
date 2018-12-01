@@ -1,4 +1,6 @@
 build/
 dist/
-query_segmenter/__pycache__
+query_segmenter/__pycache__/
+query_segmenter/tests/__pycache__/
+.pytest_cache/
 query_segmenter.egg-info
