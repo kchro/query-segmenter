@@ -17,7 +17,7 @@ Usage:
 """
 import math
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 from sklearn.feature_extraction.text import CountVectorizer
 
 
@@ -134,8 +134,9 @@ class Segmenter(object):
                         self.stats[ngram]['frequency'] += 1
 
                     query_len = len(query.split())
-                    prob = math.factorial(query_len - ngram_len + 1) / \
-                           math.factorial(query_len)
+                    numer = math.factorial(query_len - ngram_len + 1)
+                    denom = math.factorial(query_len)
+                    prob = numer / denom
 
                     self.stats[ngram]['expectation'] += prob
 
