@@ -1,0 +1,4 @@
+build/
+dist/
+query_segmenter/__pycache__
+query_segmenter.egg-info
