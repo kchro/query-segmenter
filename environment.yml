@@ -1,0 +1,14 @@
+name: query-segmenter
+channels:
+  - https://conda.anaconda.org/menpo
+  - conda-forge
+dependencies:
+  - python=3.6.5
+  - numpy=1.15.0
+  - scipy=1.1.0
+  - scikit-learn=0.20.0
+  - pandas=0.23.4
+  - jupyter=1.0.0
+  - jupyterlab=0.35.3
+  - pip:
+    - tqdm==4.28.1
