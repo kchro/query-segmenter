@@ -33,6 +33,7 @@ def test_get_significant_ngrams():
 
     assert output == ['iphone 6', 'iphone 7']
 
+
 @suppress_warnings
 def test_precompute_stats():
     segmenter = Segmenter()
@@ -57,6 +58,7 @@ def test_precompute_stats():
     }
 
     assert output == expected
+
 
 @suppress_warnings
 def test_compute_scores():
