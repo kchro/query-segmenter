@@ -6,7 +6,7 @@ Query Segmentation for search
     - an implementation of [Unsupervised Query Segmentation Using only Query Logs](https://www.microsoft.com/en-us/research/wp-content/uploads/2011/01/pp0295-mishra.pdf) [Mishra et. al. 2011] from Microsoft Research.
 
 Install:
-
+`pip install query_segmenter`
 
 Usage:
 ```python
