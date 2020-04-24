@@ -67,7 +67,10 @@ class Segmenter(object):
             k = self.stats[ngram]['co_occur']
             E_X = self.stats[ngram]['expectation']
 
-            score = 2 * (N - E_X)**2 / k
+            if k > 0:
+                score = 2 * (N - E_X)**2 / k
+            else:
+                score = 0.0
 
             if score < beta * k:
                 # if the score does not exceed threshold
