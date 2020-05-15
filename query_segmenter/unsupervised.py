@@ -126,6 +126,7 @@ class Segmenter(object):
         for ngram in sig_ngrams:
             ngram_len = len(ngram.split())
             for query in queries:
+                query = re.sub('[^a-zA-Z0-9]', ' ', query)  # unless special characters are replaced with space the tokenization wont match
                 sub_queries = query.split()
                 if all(word in sub_queries for word in ngram.split()):
                     # if all words in n-gram co-occurs in query
@@ -135,7 +136,7 @@ class Segmenter(object):
                         self.stats[ngram]['frequency'] += 1
 
                     query_len = len(query.split())
-                    numer = math.factorial(query_len - ngram_len + 1)
+                    numer = math.factorial(max(query_len - ngram_len + 1,0))   # query_len - ngram_len + 1 can possibey be negative, thus clamping to zero
                     denom = math.factorial(query_len)
                     prob = numer / denom
 
